@@ -5,3 +5,11 @@ body {
   max-width: 38rem;
   padding: 2rem;
 }
+
+#system-info {
+  display: none;
+  background-color: #99cc33;
+  border-radius: 0.5rem;
+  color: #fff;
+  padding: 1rem;
+}

@@ -8,5 +8,22 @@
   <body>
     <h1>💖 Hello World!</h1>
     <p>Welcome to your Electron application.</p>
+    <div id="system-info"></div>
+    <script src="featureFlags.js"></script>
+    <script>
+      const featureFlags = getFeatureFlags();
+
+      if(featureFlags.showSystemDetails) {
+        const sysInfo = document.getElementById('system-info');
+        sysInfo.innerHTML = `
+          <h2>System Details</h2>
+          <h3>Yay! You are on Canary!</h3>
+          <p>Node: ${process.versions.node}</p>
+          <p>Chromium: ${process.versions.chrome}</p>
+          <p>Electron: ${process.versions.electron}</p>
+        `;
+        sysInfo.style.display = 'block';
+      }
+    </script>
   </body>
 </html>
